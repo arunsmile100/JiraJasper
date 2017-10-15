@@ -41,3 +41,13 @@ VALUES(3, 'Medium', 3);
 INSERT INTO jira.priorityreference
 (id, "PriorityName", "PrioritySort")
 VALUES(4, 'Low', 4);
+
+
+
+CREATE INDEX Jira_pstatus_ix1 ON jira.jiraprojectstatus USING btree ("isActive");
+
+
+CREATE INDEX Jira_pstatus_ix2 ON jira.jiraprojectstatus USING btree ("State");
+
+
+CREATE INDEX Jira_pstatus_ix3 ON jira.jiraprojectstatus USING gin ("jsonData");
